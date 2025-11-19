@@ -17,7 +17,7 @@ create table public.customers (
     constraint credits_non_negative check (credits >= 0)
 );
 
--- Create credits_history table to track credit transactions
+-- Create credits_history table to track credit transactaions
 create table public.credits_history (
     id uuid primary key default uuid_generate_v4(),
     customer_id uuid references public.customers(id) on delete cascade not null,
